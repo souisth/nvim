@@ -25,8 +25,7 @@ opt.smartindent = true
 key.set("n", "<leader>cd", cmd.Ex, { desc = "dosya gezgini açma tuşu" } )
 key.set("n", "<M-;>", ":vnew<CR>", { desc = " yeni dikey pencere açma tuşu" } )
 key.set("n", "<M-'>", ":quit<CR>", { desc = "pencereyi kapatma tuşu " } )
-key.set("n", "<leader>tt", ":terminal<CR>", { desc = "terminal açma tuşu" } )
-
+key.set("n", "<leader>tt", ":term<CR>", { desc = "terminal "} )
 -- enable lsp --
 
 enable("pylsp")
@@ -58,3 +57,5 @@ require("lazy").setup({
     },
     change_detection = { notify = false },
 })
+
+

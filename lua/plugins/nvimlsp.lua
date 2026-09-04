@@ -1,3 +1,4 @@
+
 return {
     {
         "mason-org/mason.nvim",
@@ -7,7 +8,21 @@ return {
                 package_pending = "➜",
                 package_uninstalled = "✗"
             },},},},
-            {"neovim/nvim-lspconfig",},
+            {
+                "neovim/nvim-lspconfig",
+                config = function()
+                vim.lsp.config("lua_ls", {
+                    settings = {
+                        Lua = {
+                            workspace = {
+                                library = vim.api.nvim_get_runtime_file("", true),
+                            }
+                        }
+                    }
+                })
+            end,
+
+            },
             {
                 "mason-org/mason-lspconfig.nvim",
                 opts = {
