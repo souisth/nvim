@@ -5,7 +5,7 @@ vim.g.maplocalleader = "\\"
 
 local opt = vim.opt
 local key = vim.keymap
-local enable = vim.lsp.enable
+local enablelsp = vim.lsp.enable
 local cmd = vim.cmd
 
 -- options --
@@ -19,20 +19,23 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.expandtab= true
 opt.smartindent = true
+opt.mouse = ""
 
 -- keybinds --
 
-key.set("n", "<leader>cd", cmd.Ex, { desc = "dosya gezgini açma tuşu" } )
-key.set("n", "<M-;>", ":vnew<CR>", { desc = " yeni dikey pencere açma tuşu" } )
-key.set("n", "<M-'>", ":quit<CR>", { desc = "pencereyi kapatma tuşu " } )
-key.set("n", "<leader>tt", ":term<CR>", { desc = "terminal "} )
+key.set("n", "<leader>cd", cmd.Ex, { desc = "explorer"} )
+key.set("n", "<M-;>", ":vnew<CR>", { desc = "empty vertical window"} )
+key.set("n", "<M-'>", ":quit<CR>", { desc = "quit"} )
+key.set("n", "<leader>tt", ":term<CR>", { desc = "terminal"} )
+
 -- enable lsp --
 
-enable("pylsp")
-enable("lua_ls")
-enable("rust_analyzer")
+enablelsp("pylsp")
+enablelsp("lua_ls")
+enablelsp("rust_analyzer")
 
 -- require --
+
 
 
 -- lazy --
